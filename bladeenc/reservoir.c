@@ -105,7 +105,8 @@ void					ResvFrameBegin
 		main_data_begin cannot indicate a
 		larger value
 	*/
-	ResvMax = MIN(MAX (0, 7680-frameLength), resvLimit);
+	// ResvMax = MIN(MAX (0, 7680-frameLength), resvLimit);
+	ResvMax = 0;
 }
 
 
@@ -214,7 +215,7 @@ void					ResvFrameEnd
 		ResvSize ++;
 
 	stuffingBits = ancillary_pad;
-	
+
 	if ((over_bits = ResvSize - ResvMax) > 0)
 	{
 		stuffingBits += over_bits;
